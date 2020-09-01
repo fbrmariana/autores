@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+    <p:dataTable value="#{autorBean.autores}" var="autor" >
+        <f:facet name="header">
+            Lista de autores
+        </f:facet>
+        <p:column headerText="Nome">
+            #{autor.nome}
+        </p:column>
+        <p:column headerText="Nacionalidade">
+            #{autor.nacionalidade}
+        </p:column>
+        <p:column headerText="Ano de Nascimento">
+            #{autor.anoNascimento}
+        </p:column>
+        <p:column headerText="Notas do Autor">
+            #{autor.notas}
+        </p:column>
+        <p:column headerText="Rating">
+            #{autor.rating}
+        </p:column>
+        <p:column>
+        	
+	    <p:linkButton value="Editar" outcome="editAutor">
+	               <f:param name="id" value="#{autor.id}"/>
+	    </p:linkButton>
+	           	
+        <h:outputText value="  "/>   				
+		<p:linkButton value="Remover" outcome="deleteAutor">
+		    <f:param name="id" value="#{autor.id}"/>
+		</p:linkButton>
+        	
+        </p:column>
+    </p:dataTable>
+    <p:linkButton outcome="addAutor" value="Criar Autor" style="margin-right:20px;">
+    
+	</p:linkButton>
+</h:body>
+</html>

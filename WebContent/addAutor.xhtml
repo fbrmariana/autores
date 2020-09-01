@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+    <h:form>
+        <p:panel header="Adicionar Autor">
+            <p:panelGrid columns="1" layout="grid">
+                <p:outputLabel for="autor-nome" value="Nome:"/>
+                <p:inputText id="autor-nome" value='#{autorBean.nome}'/>
+                <p:outputLabel for="autor-nacionalidade" value="Nacionalidade:"/>
+                <p:inputText id="autor-nacionalidade" value='#{autorBean.nacionalidade}'/>
+                <p:outputLabel for="autor-ano-nascimento" value="Ano de Nascimento:"/>
+                
+                <p:inputMask id="autor-ano-nascimento" value="#{autorBean.anoNascimento}" mask="9999"/>
+                <p:outputLabel for="autor-notas" value="Notas:"/>
+                <p:inputText id="autor-notas" value='#{autorBean.notas}'/>
+                <p:outputLabel for="autor-rating" value="Rating:"/>
+                
+                <p:rating id="autor-rating" value="#{autorBean.rating}" />
+                <p:commandButton value="Salvar" action="#{autorBean.addAutor}" ajax="false"/>
+            </p:panelGrid>
+            
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
